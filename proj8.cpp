@@ -28,6 +28,7 @@ int List3::GetLength() const
 		return length;
 	}
 
+
 node* List3::ptrTo(int pos)
 	{
 		node* cur = new node;
@@ -51,29 +52,23 @@ void List3::Print()
 				cur = cur->next;
 				counter++;
 			}
-		
 	}		
 
-
-//work in progress
 
 void List3::PutItem (int pos, itemType item)
 	{
 		int pos1 = pos;
 		int pos0 = pos-1;
-
 		if(pos1 > length|| pos1 < 0)
 			{
 				cout << "position not valid" << endl;
 				return;
 			}
-
 		node* prevNode = new node;
 		prevNode = ptrTo(pos0);
  		node* cur = new node;
 		cur-> item = item;
 		cur-> next = head;
-		
 		if (pos == 0 && length == 0)
 			{
 				head = cur;
@@ -81,21 +76,27 @@ void List3::PutItem (int pos, itemType item)
 				length++; 
 				return;
 			}
-
 		cur-> next = prevNode-> next;
 		prevNode->next = cur;
 		length++;
 		return;
 	}
 
+
 itemType List3::GetItem(int pos)
 	{
+		if (pos > length || pos < 0)
+			{
+				cout << "Invalid position" << endl;
+				return '\0';
+			}
 		itemType value;
 		node* cur = new node;
 		cur = ptrTo(pos);
 		return cur-> item;
 	}
-		
+
+
 void List3:: DeleteItem(int pos)
 	{
 		node* cur = new node;
