@@ -52,10 +52,7 @@ void List3::Print()
 				counter++;
 			}
 		
-	}
-
-			
-		
+	}		
 
 
 //work in progress
@@ -63,28 +60,32 @@ void List3::Print()
 void List3::PutItem (int pos, itemType item)
 	{
 		int pos1 = pos;
-		int pos2 = pos+1;
+		int pos0 = pos-1;
+	cout << pos1 << endl;
 		//cout << "called" << endl;
-		if(pos > length || pos < 0)
+		if(pos1 > length|| pos1 < 0)
 			{
 				cout << "position not valid" << endl;
 				return;
 			}
 		node* prevNode = new node;
+		prevNode = ptrTo(pos0);
  		node* cur = new node;
 		cur-> item = item;
 		cur-> next = head;
+		
 		//cout << "CP 1" << endl;
-		if (pos == 0)
+		if (pos == 0 && length == 0)
 			{
 				//cout << "CP2" << endl;
 				 
 				head = cur;
+				cur-> next =nullptr;
+				length++; 
+			return;
 			}
-		
 		//cout << "CP3" << endl;
-		prevNode = ptrTo(pos1); 
-		cur-> next = prevNode;
+		cur-> next = prevNode-> next;
 		prevNode->next = cur;
 		length++;
 	}

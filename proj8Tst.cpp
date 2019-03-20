@@ -19,11 +19,11 @@ int main()
 			}*/
 		//lst-> Print();
 		lst-> PutItem(0, thing);
-		lst-> PutItem(1, 5);
-		lst-> PutItem(1,4);
+		lst-> PutItem(1, 1);
+		lst-> PutItem(1,2);
 		lst->PutItem (1, 3);
-		lst-> PutItem (1, 2); 
-		lst-> PutItem(5, 3);
+		lst-> PutItem (1, 4); 
+		lst-> PutItem(1, 5);
 		
 		lst->Print();
 			
