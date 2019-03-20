@@ -31,7 +31,7 @@ int List3::GetLength() const
 node* List3::ptrTo(int pos)
 	{
 		node* cur = new node;
-		cur-> next = head;
+		cur = head;
 		for (int i = 0; i < pos; i++) //cur points to the node in pos.
 			{
 				cur = cur-> next;
@@ -46,7 +46,7 @@ void List3::Print()
 		cur->item = 7;
 		int counter = 0;
 		while(counter < length)
-			{	
+			{	cout << counter << ": ";
 				cout << cur->item <<endl;
 				cur = cur->next;
 				counter++;
@@ -62,30 +62,30 @@ void List3::Print()
 
 void List3::PutItem (int pos, itemType item)
 	{
-		itemType number = item;
-		if(pos > length)
+		int pos1 = pos;
+		int pos2 = pos+1;
+		//cout << "called" << endl;
+		if(pos > length || pos < 0)
 			{
 				cout << "position not valid" << endl;
 				return;
 			}
-		//node* nxtnode = new node;
+		node* prevNode = new node;
  		node* cur = new node;
-		cur-> item = number;
+		cur-> item = item;
 		cur-> next = head;
-		
-		if (pos == 1)
+		//cout << "CP 1" << endl;
+		if (pos == 0)
 			{
+				//cout << "CP2" << endl;
+				 
 				head = cur;
 			}
-		for (int i = 0; i < pos; i++) //sets node before cur to point to curr	
-			{
-				cur = cur-> next;
-				if (i == pos)
-					{
-					
-					}
-				
-			}
+		
+		//cout << "CP3" << endl;
+		prevNode = ptrTo(pos1); 
+		cur-> next = prevNode;
+		prevNode->next = cur;
 		length++;
 	}
 				
