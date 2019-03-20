@@ -99,6 +99,17 @@ itemType List3::GetItem(int pos)
 		return cur-> item;
 	}
 		
+void List3:: DeleteItem(int pos)
+	{
+		node* cur = new node;
+		node* prev = new node;
+		prev = ptrTo(pos-1);
+		cur = ptrTo(pos);
+		prev->next = cur->next;
+		delete cur;
+		length--;
+		return;
+	}
 		
 				
 		

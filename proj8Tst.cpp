@@ -28,6 +28,12 @@ int main()
 		lst->Print();
 cout << endl;
 		cout << "Get item: " << lst-> GetItem(2) << endl;
+
+		cout << endl;
+		lst->DeleteItem(1);
+		lst->DeleteItem(2);
+		lst-> Print();
+
 			
 		return 0;
 	}
