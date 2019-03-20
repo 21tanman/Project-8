@@ -12,7 +12,7 @@ List3::List3()
 
 List3::~List3()
 	{
-	delete head;
+		delete head;
 	}
 
 bool List3::IsEmpty()const
@@ -61,30 +61,27 @@ void List3::PutItem (int pos, itemType item)
 	{
 		int pos1 = pos;
 		int pos0 = pos-1;
-	cout << pos1 << endl;
-		//cout << "called" << endl;
+
 		if(pos1 > length|| pos1 < 0)
 			{
 				cout << "position not valid" << endl;
 				return;
 			}
+
 		node* prevNode = new node;
 		prevNode = ptrTo(pos0);
  		node* cur = new node;
 		cur-> item = item;
 		cur-> next = head;
 		
-		//cout << "CP 1" << endl;
 		if (pos == 0 && length == 0)
 			{
-				//cout << "CP2" << endl;
-				 
 				head = cur;
 				cur-> next =nullptr;
 				length++; 
-			return;
+				return;
 			}
-		//cout << "CP3" << endl;
+
 		cur-> next = prevNode-> next;
 		prevNode->next = cur;
 		length++;

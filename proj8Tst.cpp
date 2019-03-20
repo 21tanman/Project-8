@@ -18,12 +18,13 @@ int main()
 				i++;
 			}*/
 		//lst-> Print();
-		lst-> PutItem(0, thing);
-		lst-> PutItem(1, 1);
-		lst-> PutItem(1,2);
+		lst-> PutItem (0, thing);
+		lst-> PutItem (1, 1);
+		lst-> PutItem (1, 2);
 		lst-> PutItem (1, 3);
 		lst-> PutItem (1, 4); 
-		lst-> PutItem(1, 5);
+		lst-> PutItem (1, 5);
+		cout << "List length: " << lst-> GetLength() << endl;
 		
 		lst->Print();
 cout << endl;
@@ -33,7 +34,8 @@ cout << endl;
 		lst->DeleteItem(1);
 		lst->DeleteItem(2);
 		lst-> Print();
-
+		cout << "List length: " << lst-> GetLength() << endl;
+		lst->IsEmpty
 			
 		return 0;
 	}
