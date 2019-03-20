@@ -88,8 +88,16 @@ void List3::PutItem (int pos, itemType item)
 		cur-> next = prevNode-> next;
 		prevNode->next = cur;
 		length++;
+		return;
 	}
-				
+
+itemType List3::GetItem(int pos)
+	{
+		itemType value;
+		node* cur = new node;
+		cur = ptrTo(pos);
+		return cur-> item;
+	}
 		
 		
 				
