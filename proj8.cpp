@@ -1,3 +1,15 @@
+/*
+Class: CPSC 122-02 
+Team Member 1: Tanner Franz 
+Team Member 2: Wesley Muehlhausen
+Submitted By: Tanner Franz 
+GU Username: tfranz 
+File Name:proj8.cpp, proj8Tst.cpp
+List3 class functions to manipualte a linked list
+To Build: g++ proj8.cpp proj8Tst.cpp
+To Execute: ./a.out
+*/ 
+
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -33,10 +45,10 @@ node* List3::ptrTo(int pos)
 	{
 		node* cur = new node;
 		cur = head;
-		for (int i = 0; i < pos; i++) //cur points to the node in pos.
-			{
-				cur = cur-> next;
-			}
+			for (int i = 0; i < pos; i++) //cur points to the node in pos.
+				{
+					cur = cur-> next;
+				}
 		return cur;
 	}
 			
@@ -46,12 +58,12 @@ void List3::Print()
 		cur = head;
 		cur->item = 7;
 		int counter = 0;
-		while(counter < length)
-			{	cout << counter << ": ";
-				cout << cur->item <<endl;
-				cur = cur->next;
-				counter++;
-			}
+			while(counter < length)
+				{
+					cout << cur->item <<endl;
+					cur = cur->next;
+					counter++;
+				}
 	}		
 
 
@@ -59,23 +71,23 @@ void List3::PutItem (int pos, itemType item)
 	{
 		int pos1 = pos;
 		int pos0 = pos-1;
-		if(pos1 > length|| pos1 < 0)
-			{
-				cout << "position not valid" << endl;
-				return;
-			}
+			if(pos1 > length|| pos1 < 0)
+				{
+					cout << "position not valid" << endl;
+					return;
+				}
 		node* prevNode = new node;
 		prevNode = ptrTo(pos0);
  		node* cur = new node;
 		cur-> item = item;
 		cur-> next = head;
-		if (pos == 0 && length == 0)
-			{
-				head = cur;
-				cur-> next =nullptr;
-				length++; 
-				return;
-			}
+			if (pos == 0 && length == 0)
+				{
+					head = cur;
+					cur-> next =nullptr;
+					length++; 
+					return;
+				}
 		cur-> next = prevNode-> next;
 		prevNode->next = cur;
 		length++;

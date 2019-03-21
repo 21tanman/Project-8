@@ -1,3 +1,15 @@
+/*
+Class: CPSC 122-02 
+Team Member 1: Tanner Franz 
+Team Member 2: Wesley Muehlhausen
+Submitted By: Tanner Franz 
+GU Username: tfranz 
+File Name: proj8Tst.cpp, proj8.cpp
+List3 class functions to manipualte a linked list
+To Build: g++ proj8.cpp proj8Tst.cpp
+To Execute: ./a.out
+*/ 
+
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -31,12 +43,10 @@ int main()
 		lst->DeleteItem(2);
 		lst-> Print();
 		cout << "List length: " << lst-> GetLength() << endl;
-		if (lst->IsEmpty())
-			cout << "List is empty" << endl;
-		else 
-			cout << "List is not empty" << endl;
-
+			if (lst->IsEmpty())
+				cout << "List is empty" << endl;
+			else 
+				cout << "List is not empty" << endl;
 		cout << "Get item 7: " << lst-> GetItem(7);
-			
 		return 0;
 	}
