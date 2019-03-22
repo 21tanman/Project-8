@@ -43,16 +43,19 @@ int main()
 		lst->DeleteItem(2);
 		lst-> Print();
 		cout << "List length: " << lst-> GetLength() << endl;
-			if (lst->IsEmpty())
+/*
+		if (lst->IsEmpty())
 				cout << "List is empty" << endl;
 			else 
 				cout << "List is not empty" << endl;
 		cout << "Get item 7: " << lst-> GetItem(7);
-
+*/
 		cout << endl;
 		cout << endl;
-
-		List3* lst2 = new List3(lst);
-		lst2->Print();
+		
+		List3* lst2 = new List;
+		List3 (lst);
+		
+		//lst2->Print();
 		return 0;
 	}

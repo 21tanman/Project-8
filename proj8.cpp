@@ -122,28 +122,36 @@ void List3:: DeleteItem(int pos)
 		
 List3::List3(List3* lst)
 	{
-		
+		node* head1 =lst->head;
+		cout << lst-> head->item;
 		node* head2 = new node;
 		node* saved = new node;
-		
-		for (int i = 0; i < length; i++)
+		cout << "called" << endl;
+		int i = 0; 
+		cout << i << endl;
+		cout << length << endl;
+		while(i < length)
 			{
+				cout << "entered forloop" << endl;
 				node* next = new node;
 				if(i == 0)
-					{
+					{cout << "entered first if" << endl;
 						head2 = saved;
 						saved->next = nullptr;
 					}					
 				if(i == length - 1)
-					{
+					{cout << "entered second if" << endl;
 						saved->next = nullptr;
 						return;
 					}
 				saved->item = lst->GetItem(i);
 				saved->next = next;
 				saved = next;	
+				cout << "end of for loop" << endl;
+				i++;
 			}
-		return;
+		cout << "end of function" << endl;
+	
 	}
 				
 
