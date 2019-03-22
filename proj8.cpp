@@ -143,7 +143,7 @@ List3::List3(List3* lst)
 					{cout << "entered second if" << endl;
 						saved->next = nullptr;
 						return;
-					}
+7					}
 				saved->item = lst->GetItem(i);
 				saved->next = next;
 				saved = next;	
