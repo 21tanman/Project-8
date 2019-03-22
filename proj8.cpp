@@ -9,7 +9,6 @@ List3 class functions to manipualte a linked list
 To Build: g++ proj8.cpp proj8Tst.cpp
 To Execute: ./a.out
 */ 
-
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -81,7 +80,7 @@ void List3::PutItem (int pos, itemType item)
  		node* cur = new node;
 		cur-> item = item;
 		cur-> next = head;
-			if (pos == 0 && length == 0)
+		if (pos == 0 && length == 0)
 				{
 					head = cur;
 					cur-> next =nullptr;
@@ -120,6 +119,34 @@ void List3:: DeleteItem(int pos)
 		length--;
 		return;
 	}
+		
+List3::List3(List3* lst)
+	{
+		
+		node* head2 = new node;
+		node* saved = new node;
+		
+		for (int i = 0; i < length; i++)
+			{
+				node* next = new node;
+				if(i == 0)
+					{
+						head2 = saved;
+						saved->next = nullptr;
+					}					
+				if(i == length - 1)
+					{
+						saved->next = nullptr;
+						return;
+					}
+				saved->item = lst->GetItem(i);
+				saved->next = next;
+				saved = next;	
+			}
+		return;
+	}
+				
+
 		
 				
 		

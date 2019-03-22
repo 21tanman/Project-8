@@ -48,5 +48,11 @@ int main()
 			else 
 				cout << "List is not empty" << endl;
 		cout << "Get item 7: " << lst-> GetItem(7);
+
+		cout << endl;
+		cout << endl;
+
+		List3* lst2 = new List3(lst);
+		lst2->Print();
 		return 0;
 	}
