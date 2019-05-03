@@ -18,44 +18,17 @@ using namespace std;
 
 int main()
 	{
-		int size = 6;
+		int size = 5;
 		List3* lst = new List3;
-			if (lst->IsEmpty())
-				cout << "List is Empty" << endl;
-
-		itemType thing = 7;
-
-		lst-> PutItem (0, thing);
-		lst-> PutItem (1, 1);
-		lst-> PutItem (1, 2);
-		lst-> PutItem (1, 3);
-		lst-> PutItem (1, 4); 
-		lst-> PutItem (1, 5);
 		
-		
+		for (int i = 0; i < size; i++)
+			lst->PutItem(i, i);
+			lst->Print();
+lst->DeleteItem(0);
+			lst->PutItem(4,5);
+			lst->DeleteItem(0);
+			lst->DeleteItem(3);
 		lst->Print();
-		cout << "List length: " << lst-> GetLength() << endl;
-		cout << endl;
-		cout << "Get item 2: " << lst-> GetItem(2) << endl;
-		cout << "Get item 4: " << lst-> GetItem(4) << endl;
-		cout << endl;
-		lst->DeleteItem(1);
-		lst->DeleteItem(2);
-		lst-> Print();
-		cout << "List length: " << lst-> GetLength() << endl;
-/*
-		if (lst->IsEmpty())
-				cout << "List is empty" << endl;
-			else 
-				cout << "List is not empty" << endl;
-		cout << "Get item 7: " << lst-> GetItem(7);
-*/
-		cout << endl;
-		cout << endl;
 		
-		List3* lst2 = new List;
-		List3 (lst);
-		
-		//lst2->Print();
 		return 0;
 	}

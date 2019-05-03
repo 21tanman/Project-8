@@ -36,7 +36,7 @@ class List3
    post: the list created with the constructor contains the contents of
          what lst points to
    */
-   List3(List3* lst);
+   void Copy(List3* lst);
 
    /*
    pre: an instance of List exists

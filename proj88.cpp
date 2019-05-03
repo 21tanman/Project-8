@@ -11,6 +11,7 @@ To Execute: ./a.out
 */ 
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 using namespace std;
 
 #include "proj8.h"
@@ -55,7 +56,7 @@ void List3::Print()
 	{
 		node* cur = new node;
 		cur = head;
-		cur->item = 7;
+		cur->item;
 		int counter = 0;
 			while(counter < length)
 				{
@@ -110,49 +111,61 @@ itemType List3::GetItem(int pos)
 
 void List3:: DeleteItem(int pos)
 	{
-		node* cur = new node;
+		if(pos >= length)
+			{
+				cout << "No item to delete in position: " << pos << endl;
+				return;
+			}
+		cout << "DELETE POS: " << pos << endl;
+		node* tmp = new node;
 		node* prev = new node;
-		prev = ptrTo(pos-1);
-		cur = ptrTo(pos);
-		prev->next = cur->next;
-		delete cur;
-		length--;
+		tmp = ptrTo(pos);
+		if(pos == 0)
+			{
+				head = tmp->next;
+				tmp = nullptr;
+				delete tmp;
+				length--;
+				return;
+			}
+		else
+			{
+				cout << "Deleteing: " << tmp->item << endl;
+				prev = ptrTo(pos-1);
+				prev->next = tmp->next;
+				delete tmp;
+				length--;
+			}
 		return;
 	}
+	
 		
 void List3::Copy(List3* lst)
 	{
 		node* head1 =lst->head;
-		cout << lst-> head->item;
-		node* head2 = new node;
+		length = lst->GetLength();
 		node* saved = new node;
-		cout << "called" << endl;
+		cout << "COPYING: " << length << " items" << endl;
 		int i = 0; 
-		cout << i << endl;
-		cout << length << endl;
 		while(i < length)
 			{
-				cout << "entered forloop" << endl;
 				node* next = new node;
 				if(i == 0)
-					{cout << "entered first if" << endl;
-						head2 = saved;
+					{
+						head = saved;
 						saved->next = nullptr;
 					}					
-				if(i == length - 1)
-					{cout << "entered second if" << endl;
-						saved->next = nullptr;
-						return;
-				}
 				saved->item = lst->GetItem(i);
 				saved->next = next;
 				saved = next;	
-				cout << "end of for loop" << endl;
 				i++;
+				next = nullptr;
+				delete next;
 			}
-		cout << "end of function" << endl;
-		return;
-	}
+		saved = nullptr;
+		delete saved;
+		
+			}
 				
 
 		
